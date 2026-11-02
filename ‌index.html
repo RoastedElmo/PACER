@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Interval Pacer</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Pacer">
+<link rel="apple-touch-icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Clock_icon.svg/512px-Clock_icon.svg.png">
 <style>
     :root {
         --bg: #121212; --card: #1e1e1e; --text: #ffffff;
@@ -218,6 +222,13 @@
 
     // Initial render
     renderIntervals();
+</script>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/PACER/sw.js');
+        });
+    }
 </script>
 </body>
 </html>
